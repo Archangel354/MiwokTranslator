@@ -15,7 +15,9 @@ public class Word {
     private String mMiwokTranslation;
 
     // Image resource ID for the Word variable
-    private int mImageResourceID;
+    private int mImageResourceID = NO_IMAGE_PROVIDED;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     // Audio resource ID for the word
     private int mAudioResourceId;
@@ -48,6 +50,12 @@ public class Word {
 
     public int getmImageResourceID() {
         return mImageResourceID;
+    }
+
+    // See if the there is an image for this particular word.
+
+    public boolean hasImage(){
+        return mImageResourceID != NO_IMAGE_PROVIDED;
     }
 
     // Return the audio resource ID of the word.
